@@ -1,0 +1,27 @@
+theme = "iroaseta"
+
+[editor]
+line-number = "relative"
+middle-click-paste = false
+cursorline = true
+completion-timeout = 250
+text-width = 120
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+select = "underline"
+
+[editor.file-picker]
+hidden = false
+
+[editor.auto-save]
+focus-lost = true
+
+[keys.normal]
+A-j = ["ensure_selections_forward", "extend_to_line_bounds", "extend_char_right", "extend_char_left", "delete_selection", "add_newline_below", "move_line_down", "replace_with_yanked"]
+A-k = ["ensure_selections_forward", "extend_to_line_bounds", "extend_char_right", "extend_char_left", "delete_selection", "move_line_up", "add_newline_above", "move_line_up", "replace_with_yanked"]
+
+[keys.select]
+A-j = ["ensure_selections_forward", "extend_to_line_bounds", "extend_char_right", "extend_char_left", "delete_selection", "add_newline_below", "move_line_down", "replace_with_yanked", "select_mode"]
+A-k = ["ensure_selections_forward", "extend_to_line_bounds", "extend_char_right", "extend_char_left", "delete_selection", "move_line_up", "add_newline_above", "move_line_up", "replace_with_yanked", "select_mode"]

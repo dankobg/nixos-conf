@@ -1,0 +1,16 @@
+{
+  "telemetry": {
+    "metrics": false
+  },
+  "ui_font_size": 16,
+  "ui_font_family": "JetBrainsMono Nerd Font",
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "Gruvbox Light",
+    "dark": "Gruvbox Dark Hard"
+  },
+  "project_panel": {
+    "dock": "right"
+  }
+}

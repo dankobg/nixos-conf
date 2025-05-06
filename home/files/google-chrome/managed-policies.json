@@ -1,0 +1,23 @@
+{
+  "ShowHomeButton": true,
+  "MetricsReportingEnabled": false,
+  "AutoFillEnabled": false,
+  "AutofillAddressEnabled": false,
+  "AutofillCreditCardEnabled": false,
+  "PaymentMethodQueryEnabled": false,
+  "PasswordManagerEnabled": false,
+  "BookmarkBarEnabled": true,
+  "ExtensionInstallForcelist": [
+    "epcnnfbjfcgphgdmggkamkmgojdagdnn;https://clients2.google.com/service/update2/crx",
+    "eimadpbcbfnmbkopoojfekhnkhdbieeh;https://clients2.google.com/service/update2/crx",
+    "nngceckbapebfimnlniiiahkandclblb;https://clients2.google.com/service/update2/crx",
+    "pkehgijcmpdhfbdbbnkijodmdjhbjlgp;https://clients2.google.com/service/update2/crx",
+    "edibdbjcniadpccecjdfdjjppcpchdlm;https://clients2.google.com/service/update2/crx",
+    "gebbhagfogifgggkldgodflihgfeippi;https://clients2.google.com/service/update2/crx",
+    "lncinpfgcgmphkebnbfpogkgiaadphpi;https://clients2.google.com/service/update2/crx",
+    "occjjkgifpmdgodlplnacmkejpdionan;https://clients2.google.com/service/update2/crx",
+    "ajopnjidmegmdimjlfnijceegpefgped;https://clients2.google.com/service/update2/crx",
+    "lhdoppojpmngadmnindnejefpokejbdd;https://clients2.google.com/service/update2/crx",
+    "jbbplnpkjmmeebjpijfedlgcdilocofh;https://clients2.google.com/service/update2/crx"
+  ]
+}

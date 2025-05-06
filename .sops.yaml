@@ -1,0 +1,7 @@
+keys:
+  - &user_danko age1t29y80tqxllt9a7jcr4hyjhfmr856uaru4c4mdudcdpj0wcfxv9qrgpx55
+creation_rules:
+  - path_regex: secrets.yaml$
+    key_groups:
+      - age:
+        - *user_danko
