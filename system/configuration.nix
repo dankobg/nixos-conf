@@ -158,6 +158,16 @@
     hashedPasswordFile = config.sops.secrets.danko_password.path;
   };
 
+  system.activationScripts.script.text = ''
+    mkdir -p /var/lib/AccountsService/{icons,users}
+    cp /home/danko/nixos-conf/home/files/account-image/danko /var/lib/AccountsService/icons/danko
+    echo -e "[User]\nIcon=/var/lib/AccountsService/icons/danko\n" > /var/lib/AccountsService/users/danko
+    chown root:root /var/lib/AccountsService/users/danko
+    chmod 0600 /var/lib/AccountsService/users/danko
+    chown root:root /var/lib/AccountsService/icons/danko
+    chmod 0444 /var/lib/AccountsService/icons/danko
+  '';
+
   programs.fish.enable = true;
   programs.firefox.enable = false;
   programs.dconf.enable = true;
