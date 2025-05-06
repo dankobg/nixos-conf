@@ -96,6 +96,7 @@
   fonts.packages = with pkgs; [
     fira-code
     jetbrains-mono
+    # corefonts
   ];
   fonts.fontconfig.enable = true;
 
