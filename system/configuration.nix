@@ -3,6 +3,7 @@
   imports = [
     ./hardware-configuration.nix
     inputs.sops-nix.nixosModules.sops
+    inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
 
   sops = {
@@ -130,7 +131,7 @@
 
   services.frigate.vaapiDriver = "nvidia";
   services.fwupd.enable = true;
-  services.flatpak.enable = true; # @TODO: check https://github.com/GermanBread/declarative-flatpak
+  services.flatpak.enable = true;
   services.printing.enable = false;
 
   services.pulseaudio.enable = false;
@@ -219,6 +220,10 @@
     # hunspell
     # hunspellDicts,sr_RS
     # https://wiki.nixos/org/wiki/LibreOffice
+  ];
+
+  services.flatpak.packages = [
+    "com.github.tchx84.Flatseal"
   ];
 
   system.stateVersion = "24.11";

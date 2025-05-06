@@ -12,9 +12,10 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-flatpak.url = "github:gmodena/nix-flatpak";
   };
 
-  outputs = { self, nixpkgs, home-manager, sops-nix, ... }@inputs: 
+  outputs = { self, nixpkgs, home-manager, sops-nix, nix-flatpak, ... }@inputs: 
   let
     system = "x86_64-linux";
     inherit (self) outputs;
