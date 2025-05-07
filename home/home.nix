@@ -29,13 +29,21 @@
   home.homeDirectory = "/home/danko";
   home.stateVersion = "24.11";
 
-  programs.fish = {
-    enable = true;
-    shellAliases = {
-      nrs = "sudo nixos-rebuild switch --flake ~/nixos-conf/#nixos";
-      hms = "home-manager switch --flake ~/nixos-conf/#danko";
-    };
-  };
+  #programs.fish = {
+  #  enable = false;
+  #  shellAliases = {
+  #    nrs = "sudo nixos-rebuild switch --flake ~/nixos-conf/#nixos";
+  #    hms = "home-manager switch --flake ~/nixos-conf/#danko";
+  #  };
+  #};
+
+  #programs.zsh = {
+  #  enable = true;
+  #  shellAliases = {
+  #    nrs = "sudo nixos-rebuild switch --flake ~/nixos-conf/#nixos";
+  #    hms = "home-manager switch --flake ~/nixos-conf/#danko";
+  #  };
+  #};
 
   programs.git = {
     enable = true;
@@ -180,6 +188,7 @@
     zed-editor
     zellij
     zoxide
+    zsh
 
     audacity
     # blender
@@ -220,6 +229,31 @@
     # ".ssh/id_ed25519" = {
     #   source = config.lib.file.mkOutOfStoreSymlink config.sops.templates."danko_ssh_private_key_tpl".path;
     # };
+
+    ".config/zsh" = {
+      source = ./files/zsh;
+      recursive = true;
+    };
+    ".config/zsh/plugins/powerlevel10k" = {
+      source = "${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k";
+      recursive = true;
+    };
+    ".config/zsh/plugins/zsh-autosuggestions" = {
+      source = "${pkgs.zsh-autosuggestions}/share/zsh-autosuggestions";
+      recursive = true;
+    };
+    ".config/zsh/plugins/zsh-syntax-highlighting" = {
+      source = "${pkgs.zsh-syntax-highlighting}/share/zsh-syntax-highlighting";
+      recursive = true;
+    };
+    ".config/zsh/plugins/zsh-completions" = {
+      source = "${pkgs.zsh-completions}/share/zsh/site-functions";
+      recursive = true;
+    };
+    ".config/zsh/plugins/fzf-tab" = {
+      source = "${pkgs.zsh-fzf-tab}/share/fzf-tab";
+      recursive = true;
+    };
   };
 
   dconf.settings = {

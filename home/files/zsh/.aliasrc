@@ -1,0 +1,36 @@
+# ZSH aliases
+
+alias ..="cd ../"
+alias ...="cd ../../"
+alias ....="cd ../../../"
+
+alias nrs="sudo nixos-rebuild switch --flake ~/nixos-conf/#nixos"
+alias hms="home-manager switch --flake ~/nixos-conf/#danko"
+alias dc="docker compose"
+alias k="kubectl"
+alias ld="lazydocker"
+alias lg="lazygit"
+alias z="zoxide"
+alias zj="zellij"
+alias wtr="curl wttr.in"
+
+if command -v eza &>/dev/null; then
+  alias l='eza --color=auto --icons=auto --group-directories-first'
+  alias ls='eza --color=auto --icons=auto --group-directories-first'
+	alias la='eza --color=auto --icons=auto --group-directories-first -a'
+	alias ll='eza --color=auto --icons=auto --group-directories-first -lhgo --git'
+	alias lla='eza --color=auto --icons=auto --group-directories-first -alhgo --git'
+	alias tree='eza --color=auto --icons=auto --tree'
+else
+  alias l='ls --color=auto'
+  alias ls='ls --color=auto'
+  alias la='ls --color=auto -a'
+  alias ll='ls --color=auto -lh'
+  alias lla='ls --color=auto -lha'
+fi
+
+if command -v bat &>/dev/null; then
+	alias cat='bat --color=auto --style=auto'
+fi
+
+alias nvidia-settings="nvidia-settings --config=$XDG_CONFIG_HOME/nvidia/settings"

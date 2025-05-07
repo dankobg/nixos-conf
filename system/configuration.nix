@@ -129,6 +129,17 @@
     EGL_PLATFORM = "wayland";
   };
 
+  environment.sessionVariables = {
+    XDG_CONFIG_HOME = "$HOME/.config";
+    XDG_DATA_HOME = "$HOME/.local/share";
+    XDG_CACHE_HOME = "$HOME/.cache";
+    XDG_STATE_HOME = "$HOME/.local/state";
+    XDG_DESKTOP_DIR = "$HOME/Desktop";
+    XDG_DOWNLOAD_DIR = "$HOME/Downloads";
+    ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
+    XDG_RUNTIME_DIR = "/run/user/$UID";
+  };
+  
   services.frigate.vaapiDriver = "nvidia";
   services.fwupd.enable = true;
   services.flatpak.enable = true;
@@ -154,7 +165,7 @@
     isNormalUser = true;
     description = "danko";
     extraGroups = [ "networkmanager" "wheel" "docker" ];
-    shell = pkgs.fish;
+    shell = pkgs.zsh;
     hashedPasswordFile = config.sops.secrets.danko_password.path;
   };
 
@@ -168,7 +179,8 @@
     chmod 0444 /var/lib/AccountsService/icons/danko
   '';
 
-  programs.fish.enable = true;
+  # programs.fish.enable = false;
+  programs.zsh.enable = true;
   programs.firefox.enable = false;
   programs.dconf.enable = true;
   programs.appimage.enable = true;
