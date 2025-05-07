@@ -101,6 +101,7 @@
   fonts.packages = with pkgs; [
     fira-code
     jetbrains-mono
+    meslo
     # corefonts
   ];
   fonts.fontconfig.enable = true;
