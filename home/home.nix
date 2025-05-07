@@ -133,6 +133,17 @@
     # git
     glow
     go
+    gopls # @TODO
+    delve # @TODO
+    gotools # @TODO
+    gomodifytags # @TODO
+    gotests # @TODO
+    golangci-lint # @TODO
+    golangci-lint-langserver # @TODO
+    goreleaser # @TODO
+    errcheck # @TODO
+    impl # @TODO
+    protobuf # @TODO
     # google-chrome
     handbrake
     helix
@@ -161,9 +172,19 @@
     traceroute # net-tools
     whois      # net-tools
     nodejs_23
+    pnpm
+    nodePackages.prettier
+    vscode-langservers-extracted # @TODO
+    ansible-language-server # @TODO
+    dockerfile-language-server-nodejs # @TODO
+    docker-compose-language-service # @TODO
+    typescript # @TODO
+    typescript-language-server # @TODO
+    svelte-language-server # @TODO
+    # typescript-svelte-plugin # @TODO
+    yaml-language-server # @TODO
     onefetch
     pika-backup
-    protobuf_27
     python3
     qbittorrent
     rclone

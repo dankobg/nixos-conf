@@ -141,7 +141,16 @@
     XDG_STATE_HOME = "$HOME/.local/state";
     XDG_DESKTOP_DIR = "$HOME/Desktop";
     XDG_DOWNLOAD_DIR = "$HOME/Downloads";
+    EDITOR = "hx";
     ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
+    ANSIBLE_HOME = "$XDG_DATA_HOME/ansible";
+    GOPATH = "$XDG_STATE_HOME/go";
+    PYTHON_HISTORY = "$XDG_STATE_HOME/python";
+    NPM_CONFIG_PREFIX = "$XDG_STATE_HOME/npm-global";
+    PNPM_HOME = "$XDG_DATA_HOME/pnpm";
+    RUSTUP_HOME = "$XDG_STATE_HOME/rustup";
+    CARGO_HOME = "$XDG_STATE_HOME/cargo";
+    PATH = "$PATH:$GOPATH/bin:$NPM_CONFIG_PREFIX/bin:$CARGO_HOME/bin";
   };
 
   services.frigate.vaapiDriver = "nvidia";
