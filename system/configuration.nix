@@ -52,15 +52,19 @@
   zramSwap.enable = true;
   services.zram-generator.enable = true;
 
-  networking.hostName = "nixos";
-  networking.extraHosts = ''
-    127.0.0.1 traefik.juicer-dev.xyz mail.juicer-dev.xyz juicer-dev.xy
-    ::1 traefik.juicer-dev.xyz mail.juicer-dev.xyz juicer-dev.xy
-  '';
-
-  networking.wireless.enable = false;
-  networking.networkmanager.enable = true;
-  networking.firewall.enable = false;
+  networking = {
+    hostName = "nixos";
+    extraHosts = ''
+      127.0.0.1 traefik.juicer-dev.xyz mail.juicer-dev.xyz juicer-dev.xy
+      ::1 traefik.juicer-dev.xyz mail.juicer-dev.xyz juicer-dev.xy
+    '';
+    networkmanager = {
+      enable = true;
+      settings.connectivity.uri = "http://nmcheck.gnome.org/check_network_status.txt";
+    };
+    wireless.enable = false;
+    firewall.enable = false;
+  };
 
   services.openssh.enable = true;
 
@@ -131,15 +135,14 @@
 
   environment.sessionVariables = {
     XDG_CONFIG_HOME = "$HOME/.config";
-    XDG_DATA_HOME = "$HOME/.local/share";
     XDG_CACHE_HOME = "$HOME/.cache";
+    XDG_DATA_HOME = "$HOME/.local/share";
     XDG_STATE_HOME = "$HOME/.local/state";
     XDG_DESKTOP_DIR = "$HOME/Desktop";
     XDG_DOWNLOAD_DIR = "$HOME/Downloads";
     ZDOTDIR = "$XDG_CONFIG_HOME/zsh";
-    XDG_RUNTIME_DIR = "/run/user/$UID";
   };
-  
+
   services.frigate.vaapiDriver = "nvidia";
   services.fwupd.enable = true;
   services.flatpak.enable = true;
@@ -179,9 +182,9 @@
     chmod 0444 /var/lib/AccountsService/icons/danko
   '';
 
-  # programs.fish.enable = false;
+  programs.fish.enable = true;
   programs.zsh.enable = true;
-  programs.firefox.enable = false;
+  # programs.firefox.enable = true;
   programs.dconf.enable = true;
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
