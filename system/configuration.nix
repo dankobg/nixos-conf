@@ -99,9 +99,9 @@
   };
 
   fonts.packages = with pkgs; [
-    fira-code
-    jetbrains-mono
-    meslo
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+    nerd-fonts.meslo-lg
     # corefonts
   ];
   fonts.fontconfig.enable = true;
