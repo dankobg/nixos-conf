@@ -58,10 +58,7 @@
       127.0.0.1 traefik.juicer-dev.xyz mail.juicer-dev.xyz juicer-dev.xy
       ::1 traefik.juicer-dev.xyz mail.juicer-dev.xyz juicer-dev.xy
     '';
-    networkmanager = {
-      enable = true;
-      settings.connectivity.uri = "http://nmcheck.gnome.org/check_network_status.txt";
-    };
+    networkmanager.enable = true;
     wireless.enable = false;
     firewall.enable = false;
   };
