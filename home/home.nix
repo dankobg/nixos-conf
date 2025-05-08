@@ -277,8 +277,10 @@
     };
   };
 
-  dconf.settings = {
+  dconf.settings = with lib.hm.gvariant; {
     "ca/desrt/dconf-editor" = {
+      saved-pathbar-path = '/';
+      saved-view = '/';
       show-warning = false;
     };
     "org/gnome/Console" = {
@@ -454,6 +456,12 @@
       power-button-action = "interactive";
       sleep-inactive-ac-timeout = 2700;
       sleep-inactive-ac-type = "nothing";
+    };    
+    "org/gnome/shell = {
+      # app-picker-layout=[{'Utilities': <{'position': <0>}>, 'nixos-manual.desktop': <{'position': <1>}>, 'org.gnome.Contacts.desktop': <{'position': <2>}>, 'org.gnome.Weather.desktop': <{'position': <3>}>, 'org.gnome.Calendar.desktop': <{'position': <4>}>, 'org.gnome.clocks.desktop': <{'position': <5>}>, 'org.gnome.Calculator.desktop': <{'position': <6>}>, 'org.gnome.Maps.desktop': <{'position': <7>}>, 'org.gnome.Snapshot.desktop': <{'position': <8>}>, 'org.gnome.Totem.desktop': <{'position': <9>}>, 'vlc.desktop': <{'position': <10>}>, 'org.gnome.Music.desktop': <{'position': <11>}>, 'audacity.desktop': <{'position': <12>}>, 'org.gnome.Extensions.desktop': <{'position': <13>}>, 'com.mattjakeman.ExtensionManager.desktop': <{'position': <14>}>, 'org.gnome.SystemMonitor.desktop': <{'position': <15>}>, 'simple-scan.desktop': <{'position': <16>}>, 'btop.desktop': <{'position': <17>}>, 'org.bleachbit.BleachBit.desktop': <{'position': <18>}>, 'blueman-manager.desktop': <{'position': <19>}>, 'ca.desrt.dconf-editor.desktop': <{'position': <20>}>, 'org.gnome.Settings.desktop': <{'position': <21>}>, 'htop.desktop': <{'position': <22>}>, 'nvidia-settings.desktop': <{'position': <23>}>}, {'fish.desktop': <{'position': <0>}>, 'Helix.desktop': <{'position': <1>}>, 'fr.handbrake.ghb.desktop': <{'position': <2>}>, 'org.gnome.World.PikaBackup.desktop': <{'position': <3>}>, 'org.qbittorrent.qBittorrent.desktop': <{'position': <4>}>, 'it.mijorus.smile.desktop': <{'position': <5>}>, 'stacer.desktop': <{'position': <6>}>, 'syncthing-ui.desktop': <{'position': <7>}>, 'com.github.tchx84.Flatseal.desktop': <{'position': <8>}>}]
+      app-picker-layout = [];
+      favorite-apps = [com.mitchellh.ghostty.desktop org.gnome.Nautilus.desktop firefox.desktop code.desktop dev.zed.Zed.desktop org.gnome.TextEditor.desktop bruno.desktop bitwarden.desktop discord.desktop slack.desktop thunderbird.desktop Logseq.desktop org.gnome.Software.desktop]
+      welcome-dialog-last-shown-version = '47.2'
     };
     "org/gnome/shell/world-clocks" = {
       locations = [];
@@ -486,5 +494,5 @@
       sort-order = "ascending";
       type-format = "category";
     };
-  };
+  };  
 }
