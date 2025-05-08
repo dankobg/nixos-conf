@@ -171,7 +171,7 @@
     tcpdump    # net-tools
     traceroute # net-tools
     whois      # net-tools
-    nodejs_23
+    nodejs_24
     pnpm
     nodePackages.prettier
     vscode-langservers-extracted # @TODO
