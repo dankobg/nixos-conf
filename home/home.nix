@@ -17,9 +17,27 @@
       danko_git_user_name = {};
       danko_git_user_email = {};
     };    
-    # templates = {
-    #   "danko_ssh_private_key_tpl".content = config.sops.placeholder.danko_ssh_private_key;
-    # };
+    templates = {
+      "danko_git_config_tpl".content = ''
+        [user]
+            name = ${config.sops.placeholder.danko_git_user_name}
+            email = ${config.sops.placeholder.danko_git_user_email}
+        [init]
+            defaultBranch = "main"
+        [core]
+            editor = "hx"
+        [color]
+            branch = "auto"
+            status = "auto"
+            ui = "auto"
+        [diff]
+            colorMoved = "zebra"
+        [fetch]
+            prune = true
+        [pull]
+            rebase = true
+      '';
+    };
   };
 
   nixpkgs = {
@@ -50,42 +68,6 @@
   #    hms = "home-manager switch --flake ~/nixos-conf/#danko";
   #  };
   # };
-
-  programs.git = {
-    enable = true;
-    userName = "@danko_git_user_name_placeholder@";
-    userEmail = "@danko_git_user_email_placeholder@";
-    extraConfig = {
-      color = {
-        ui = "auto";
-        status = "auto";
-        branch = "auto";
-      };
-      diff = {
-        colorMoved = "zebra";
-      };
-      core = {
-        editor = "hx";
-      };
-      init = {
-        defaultBranch = "main";
-      };
-      pull = {
-        rebase = true;
-      };
-      fetch = {
-        prune = true;
-      };
-    };
-  };
-
-  home.activation.updateGitUserNameAndEmail = lib.hm.dag.entryAfter ["writeBoundary"] ''
-    configFile=/home/danko/.config/git/config
-    name_secret=$(cat "${config.sops.secrets.danko_git_user_name.path}")
-    email_secret=$(cat "${config.sops.secrets.danko_git_user_email.path}")
-    ${pkgs.gnused}/bin/sed -i "s#@danko_git_user_name_placeholder@#$name_secret#" "$configFile"
-    ${pkgs.gnused}/bin/sed -i "s#@danko_git_user_email_placeholder@#$email_secret#" "$configFile"
-  '';
 
   programs.firefox = {
     enable = true;
@@ -253,10 +235,10 @@
       recursive = true;
     };
 
-    # ".ssh/id_ed25519" = {
-    #   source = config.lib.file.mkOutOfStoreSymlink config.sops.templates."danko_ssh_private_key_tpl".path;
-    # };
-
+    ".config/git/config" = {
+      source = config.lib.file.mkOutOfStoreSymlink config.sops.templates."danko_git_config_tpl".path;
+    };
+     
     ".config/zsh" = {
       source = ./files/zsh;
       recursive = true;
