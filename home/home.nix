@@ -278,8 +278,213 @@
   };
 
   dconf.settings = {
+    "ca/desrt/dconf-editor" = {
+      show-warning = false;
+    };
+    "org/gnome/Console" = {
+      audible-bell = false;
+      custom-font = "JetBrainsMono Nerd Font 11";
+      font-scale = 1.0;
+      use-system-font = false;
+    };
+    "org/gnome/TextEditor" = {
+      indent-style = "space";
+      show-line-numbers = true;
+      show-right-margin = false;
+      tab-width = mkUint32 2;
+      last-save-directory = "file:///home/danko/Downloads";
+    };
+    "org/gnome/Totem" = {
+      active-plugins = [ "screenshot" "skipto" "vimeo" "autoload-subtitles" "apple-trailers" "rotation" "variable-rate" "screensaver" "mpris" "save-file" "recent" "movie-properties" "open-directory" ];
+      subtitle-encoding = "UTF-8";
+    };
+    "org/gnome/baobab/ui" = {
+      active-chart = "rings";
+    };
+    "org/gnome/calculator" = {
+      accuracy = 9;
+      angle-units = "degrees";
+      base = 10;
+      button-mode = "basic";
+      number-format = "automatic";
+      refresh-interval = 604800;
+      show-thousands = false;
+      show-zeroes = false;
+      source-currency = "EUR";
+      source-units = "degree";
+      target-currency = "RSD";
+      target-units = "radian";
+      word-size = 64;
+    };
+    "org/gnome/calendar" = {
+      active-view = "month";
+    };
+    "org/gnome/clocks/state/window" = {
+      panel-id = "world";
+    };
+    "org/gnome/control-center" = {
+      last-panel = "network";
+    };
+    "org/gnome/desktop/app-folders" = {
+      folder-children = [ "Utilities" ];
+    };
+    "org/gnome/desktop/app-folders/folders/Utilities" = {
+      apps = [ "org.freedesktop.GnomeAbrt.desktop" "nm-connection-editor.desktop" "org.gnome.baobab.desktop" "org.gnome.Connections.desktop" "org.gnome.DejaDup.desktop" "org.gnome.DiskUtility.desktop" "org.gnome.Evince.desktop" "org.gnome.FileRoller.desktop" "org.gnome.font-viewer.desktop" "org.gnome.Loupe.desktop" "org.gnome.seahorse.Application.desktop" "org.gnome.tweaks.desktop" "org.gnome.Usage.desktop" ];
+      categories = [ "X-GNOME-Utilities" ];
+      name = "X-GNOME-Utilities.directory";
+      translate = true;
+    };
+    "org/gnome/desktop/background" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/blobs-l.svg";
+      picture-uri-dark = "file:///run/current-system/sw/share/backgrounds/gnome/blobs-d.svg";
+      primary-color = "#241f31";
+      secondary-color = "#000000";
+    };
+    "org/gnome/desktop/calendar" = {
+      show-weekdate = false;
+    };
+    "org/gnome/desktop/datetime" = {
+      automatic-timezone = true;
+    };
     "org/gnome/desktop/input-sources" = {
+      mru-sources = [ (mkTuple [ "xkb" "us" ]) ];
+      sources = [ (mkTuple [ "xkb" "us" ]) (mkTuple [ "xkb" "rs+latinyz" ]) (mkTuple [ "xkb" "rs" ]) ];
       xkb-options = [ "caps:escape" ];
+    };
+    "org/gnome/desktop/interface" = {
+      accent-color = "purple";
+      clock-show-date = true;
+      clock-show-weekday = true;
+      clock-show-seconds = false;
+      color-scheme = "prefer-dark";
+      gtk-enable-primary-paste = false;
+    };
+    "org/gnome/desktop/notifications" = {
+      application-children = [ "org-gnome-console" "org-gnome-texteditor" "firefox" "gnome-power-panel" ];
+    };
+    "org/gnome/desktop/notifications/application/firefox" = {
+      application-id = "firefox.desktop";
+    };
+    "org/gnome/desktop/notifications/application/gnome-power-panel" = {
+      application-id = "gnome-power-panel.desktop";
+    };
+    "org/gnome/desktop/notifications/application/org-gnome-console" = {
+      application-id = "org.gnome.Console.desktop";
+    };
+    "org/gnome/desktop/notifications/application/org-gnome-texteditor" = {
+      application-id = "org.gnome.TextEditor.desktop";
+    };
+    "org/gnome/desktop/peripherals/keyboard" = {
+      delay = mkUint32 265;
+      numlock-state = false;
+      repeat-interval = mkUint32 11;
+    };
+    "org/gnome/desktop/peripherals/mouse" = {
+      accel-profile = "flat";
+      speed = 0.5;
+    };
+    "org/gnome/desktop/peripherals/touchpad" = {
+      two-finger-scrolling-enabled = true;
+    };
+    "org/gnome/desktop/privacy" = {
+      old-files-age = mkUint32 30;
+      recent-files-max-age = -1;
+    };
+    "org/gnome/desktop/screensaver" = {
+      color-shading-type = "solid";
+      picture-options = "zoom";
+      picture-uri = "file:///run/current-system/sw/share/backgrounds/gnome/blobs-l.svg";
+      primary-color = "#241f31";
+      secondary-color = "#000000";
+    };
+    "org/gnome/desktop/search-providers" = {
+      disabled = [];
+      sort-order = [ "org.gnome.Settings.desktop" "org.gnome.Contacts.desktop" "org.gnome.Nautilus.desktop" ];
+    };
+    "org/gnome/desktop/session" = {
+      idle-delay = mkUint32 900;
+    };
+    "org/gnome/evolution-data-server" = {
+      migrated = true;
+    };
+    "org/gnome/gnome-system-monitor" = {
+      current-tab = "resources";
+      show-dependencies = false;
+      show-whose-processes = "user";
+    };
+    "org/gnome/gnome-system-monitor/proctree" = {
+      col-26-visible = false;
+      col-26-width = 0;
+    };
+    "org/gnome/maps" = {
+      last-viewed-location = [ 44.781272180712875 20.413749033296654 ];
+      map-type = "MapsVectorSource";
+      transportation-type = "pedestrian";
+      window-maximized = true;
+      zoom-level = 11;
+    };
+    "org/gnome/mutter" = {
+      dynamic-workspaces = true;
+      edge-tiling = true;
+    };
+    "org/gnome/nautilus/icon-view" = {
+      default-zoom-level = "small";
+    };
+    "org/gnome/nautilus/preferences" = {
+      default-folder-viewer = "icon-view";
+      default-sort-order = "type";
+      migrated-gtk-settings = true;
+      search-filter-time-type = "last_modified";
+      show-hidden-files = true;
+    };
+    "org/gnome/nautilus/compression" = {
+      default-compression-format = "tar.xz";
+    };
+    "org/gnome/settings-daemon/plugins/color" = {
+      night-light-enabled = true;
+      night-light-schedule-automatic = false;
+      night-light-temperature = mkUint32 2700;
+    };
+    "org/gnome/settings-daemon/plugins/media-keys" = {
+      volume-step = 5;
+    };
+    "org/gnome/settings-daemon/plugins/power" = {
+      power-button-action = "interactive";
+      sleep-inactive-ac-timeout = 2700;
+      sleep-inactive-ac-type = "nothing";
+    };
+    "org/gnome/shell/world-clocks" = {
+      locations = [];
+    };
+    "org/gnome/software" = {
+      check-timestamp = mkInt64 1746698711;
+      first-run = false;
+      flatpak-purge-timestamp = mkInt64 1746631857;
+    };
+    "org/gtk/gtk4/settings/file-chooser" = {
+      date-format = "regular";
+      location-mode = "path-bar";
+      show-hidden = true;
+      sidebar-width = 150;
+      sort-column = "name";
+      sort-directories-first = true;
+      sort-order = "ascending";
+      type-format = "category";
+      view-type = "list";
+    };
+    "org/gtk/settings/file-chooser" = {
+      date-format = "regular";
+      location-mode = "path-bar";
+      show-hidden = true;
+      show-size-column = true;
+      show-type-column = true;
+      sidebar-width = 150;
+      sort-column = "name";
+      sort-directories-first = true;
+      sort-order = "ascending";
+      type-format = "category";
     };
   };
 }
