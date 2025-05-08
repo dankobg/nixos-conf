@@ -303,6 +303,10 @@
     "org/gnome/baobab/ui" = {
       active-chart = "rings";
     };
+    "org/gnome/boxes" = {
+      first-run = false;
+      view = "icon-view";
+    };
     "org/gnome/calculator" = {
       accuracy = 9;
       angle-units = "degrees";
@@ -364,8 +368,8 @@
       gtk-enable-primary-paste = false;
     };
     "org/gnome/desktop/notifications" = {
-      application-children = [ "org-gnome-console" "org-gnome-texteditor" "firefox" "gnome-power-panel" ];
-    };
+      application-children = [ "org-gnome-console" "org-gnome-texteditor" "firefox" "gnome-power-panel" "code" "discord" ];
+    };    
     "org/gnome/desktop/notifications/application/firefox" = {
       application-id = "firefox.desktop";
     };
@@ -377,6 +381,12 @@
     };
     "org/gnome/desktop/notifications/application/org-gnome-texteditor" = {
       application-id = "org.gnome.TextEditor.desktop";
+    };
+    "org/gnome/desktop/notifications/application/discord" = {
+      application-id = "discord.desktop";
+    };
+    "org/gnome/desktop/notifications/application/code" = {
+      application-id = "code.desktop";
     };
     "org/gnome/desktop/peripherals/keyboard" = {
       delay = mkUint32 265;
@@ -451,6 +461,12 @@
     };
     "org/gnome/settings-daemon/plugins/media-keys" = {
       volume-step = 5;
+      custom-keybindings = [ "/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/" ];
+    };
+    "org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0" = {
+      binding = "<Super>period";
+      command = "smile";
+      name = "Smile emoji picker";
     };
     "org/gnome/settings-daemon/plugins/power" = {
       power-button-action = "interactive";
@@ -495,3 +511,4 @@
     };
   };  
 }
+    
