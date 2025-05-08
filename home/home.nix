@@ -22,28 +22,34 @@
     # };
   };
 
-  nixpkgs.config.allowUnfree = true;
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      permittedInsecurePackages = [ "beekeeper-studio-5.1.5" ]; # TMP FIX until they update electron
+    };
+  };
+
   programs.home-manager.enable = true;
 
   home.username = "danko";
   home.homeDirectory = "/home/danko";
   home.stateVersion = "24.11";
 
-  #programs.fish = {
+  # programs.fish = {
   #  enable = false;
   #  shellAliases = {
   #    nrs = "sudo nixos-rebuild switch --flake ~/nixos-conf/#nixos";
   #    hms = "home-manager switch --flake ~/nixos-conf/#danko";
   #  };
-  #};
+  # };
 
-  #programs.zsh = {
+  # programs.zsh = {
   #  enable = true;
   #  shellAliases = {
   #    nrs = "sudo nixos-rebuild switch --flake ~/nixos-conf/#nixos";
   #    hms = "home-manager switch --flake ~/nixos-conf/#danko";
   #  };
-  #};
+  # };
 
   programs.git = {
     enable = true;
@@ -102,13 +108,13 @@
     };
     policies = (builtins.fromJSON (builtins.readFile ./files/firefox/policies.json)).policies;
   };
-
+  
   home.packages = with pkgs; [
     age
     ansible
     atlas
     bat
-    # beekeeper-studio
+    beekeeper-studio
     bitwarden-cli
     bitwarden-desktop
     bleachbit
@@ -144,7 +150,7 @@
     errcheck # @TODO
     impl # @TODO
     protobuf # @TODO
-    # google-chrome
+    google-chrome
     handbrake
     helix
     kubernetes-helm
@@ -475,7 +481,7 @@
     };    
     "org/gnome/shell" = {
       app-picker-layout = [];
-      favorite-apps = [ "com.mitchellh.ghostty.desktop" "org.gnome.Nautilus.desktop" "firefox.desktop" "code.desktop" "dev.zed.Zed.desktop" "org.gnome.TextEditor.desktop" "Logseq.desktop" "bruno.desktop" "bitwarden.desktop" "discord.desktop" "slack.desktop" "thunderbird.desktop" ];
+      favorite-apps = [ "com.mitchellh.ghostty.desktop" "org.gnome.Nautilus.desktop" "firefox.desktop" "code.desktop" "dev.zed.Zed.desktop" "org.gnome.TextEditor.desktop" "Logseq.desktop" "bruno.desktop" "beekeeper-studio.desktop" "bitwarden.desktop" "discord.desktop" "slack.desktop" "thunderbird.desktop" ];
       welcome-dialog-last-shown-version = "48.0";
     };
     "org/gnome/shell/world-clocks" = {
