@@ -210,6 +210,8 @@
 
   environment.systemPackages = with pkgs; [
     coreutils
+    decibels # not yet in gnome core-utilities
+    gnome-boxes
     git
     curl
     wget
