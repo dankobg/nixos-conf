@@ -174,14 +174,14 @@
   users.users.danko = {
     isNormalUser = true;
     description = "danko";
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" "kvm" ];
     shell = pkgs.zsh;
     hashedPasswordFile = config.sops.secrets.danko_password.path;
   };
 
   system.activationScripts.script.text = ''
     mkdir -p /var/lib/AccountsService/{icons,users}
-    cp /home/danko/nixos-conf/home/files/account-image/danko /var/lib/AccountsService/icons/danko
+    cp /home/danko/projects/nixos-conf/home/files/account-image/danko /var/lib/AccountsService/icons/danko
     echo -e "[User]\nIcon=/var/lib/AccountsService/icons/danko\n" > /var/lib/AccountsService/users/danko
     chown root:root /var/lib/AccountsService/users/danko
     chmod 0600 /var/lib/AccountsService/users/danko
@@ -196,16 +196,12 @@
   programs.appimage.enable = true;
   programs.appimage.binfmt = true;
 
-  virtualisation.docker = {
-    enable = true;
-    daemon.settings = {
-      log-driver = "json-file";
-      log-level = "info";
-      log-opts = {
-        max-size = "5m";
-        max-file = "3";
-      };
+  virtualisation = {
+    docker = {
+      enable = true;
+      daemon.settings = builtins.fromJSON (builtins.readFile ../home/files/docker/daemon.json);
     };
+    libvirtd.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
@@ -235,6 +231,7 @@
     vulkan-loader
     vulkan-validation-layers
     vulkan-tools
+    libva
     libva-utils
     ffmpeg-full
     ffmpegthumbnailer
