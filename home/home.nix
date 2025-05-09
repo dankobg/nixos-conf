@@ -94,6 +94,7 @@
   home.packages = with pkgs; [
     age
     ansible
+    ansible-lint
     atlas
     bat
     beekeeper-studio
