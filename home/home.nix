@@ -3,6 +3,11 @@
 {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
+    inputs.nix-flatpak.homeManagerModules.nix-flatpak
+  ];
+
+  services.flatpak.packages = [
+    "com.github.tchx84.Flatseal"
   ];
 
   sops = {
@@ -113,13 +118,12 @@
     eza
     fastfetch
     fd
-    # firefox
     # flatseal FLATPAK VERSION
     fzf
-    # gearlever
+    # gearlever LOL i get a collision between smile emoji picker and gearlever app for managing app images, nix is such a good pkg manager
     gh
     ghostty
-    # git
+    git
     glow
     go
     gopls # @TODO

@@ -3,7 +3,6 @@
   imports = [
     ./hardware-configuration.nix
     inputs.sops-nix.nixosModules.sops
-    inputs.nix-flatpak.nixosModules.nix-flatpak
   ];
 
   sops = {
@@ -68,7 +67,7 @@
   time.timeZone = "Europe/Belgrade";
   i18n.defaultLocale = "en_US.UTF-8";
 
-  services.xserver.enable = true;
+  services.xserver.enable = false;
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.displayManager.gdm.wayland = true;
   services.xserver.desktopManager.gnome.enable = true;
@@ -207,6 +206,7 @@
   environment.systemPackages = with pkgs; [
     coreutils
     decibels # not yet in gnome core-utilities
+    jdk
     gnome-boxes
     git
     curl
@@ -251,10 +251,6 @@
     # hunspell
     # hunspellDicts,sr_RS
     # https://wiki.nixos/org/wiki/LibreOffice
-  ];
-
-  services.flatpak.packages = [
-    "com.github.tchx84.Flatseal"
   ];
 
   system.stateVersion = "24.11";
